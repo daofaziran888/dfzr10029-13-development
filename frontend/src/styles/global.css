@@ -35,6 +35,18 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .error-text { color: #b42318; }
 .modal-backdrop { position: fixed; inset: 0; background: rgb(15 23 42 / 35%); display: grid; place-items: center; padding: 20px; z-index: 20; }
 .modal { width: min(560px, 100%); max-height: 90vh; overflow: auto; background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 20px 50px rgb(15 23 42 / 20%); }
+.modal.wide { width: min(880px, 100%); }
+.modal h4 { margin: 14px 0 8px; }
+/* 批量查询结果包 */
+.batch-section { margin-top: 24px; }
+.batch-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; margin: 0 0 10px; }
+.batch-meta dt { font-size: 12px; color: var(--muted); }
+.batch-meta dd { margin: 0; font-size: 13px; word-break: break-all; }
+.param-input { width: 100%; box-sizing: border-box; border: 1px solid var(--border); border-radius: 6px; padding: 8px; font-family: monospace; font-size: 12px; }
+.tag { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; white-space: nowrap; }
+.tag.ok { background: #dcfce7; color: #166534; }
+.tag.warn { background: #fef9c3; color: #854d0e; }
+.tag.fail { background: #fee2e2; color: #b42318; }
 .create-field { display: block; margin-bottom: 10px; }
 .create-field span { display: block; color: var(--muted); font-size: 12px; margin-bottom: 4px; }
 .create-field input { width: 100%; box-sizing: border-box; border: 1px solid var(--border); border-radius: 6px; padding: 8px; }

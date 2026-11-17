@@ -35,6 +35,19 @@ class ActionPayload(BaseModel):
     remark: str | None = None
 
 
+class BatchQueryPayload(BaseModel):
+    """批量查询提交契约：多组参数一次提交，失败策略决定部分组合失败时的处理边界。
+
+    - 参数表：每组参数一个键值对；取值可以是列表，按模板参数定义顺序展开成参数组合。
+    - 失败策略：继续执行（保留成功组合）或整组回滚（任一组合失败则整批回滚）。
+    - 请求编号：可选幂等键，同一模板下重复提交返回已有批量查询结果包。
+    """
+
+    参数表: list[dict[str, Any]] = Field(default_factory=list)
+    失败策略: str = "继续执行"
+    请求编号: str | None = None
+
+
 
 class MetricDefEntry(BaseModel):
     """指标明细结构。"""
